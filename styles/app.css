@@ -1,0 +1,249 @@
+/* Reset */
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.4rem;
+  font-family: "Raleway", sans-serif;
+  background: url(../images/bg-mobile.png) no-repeat;
+  background-size: cover;
+}
+
+/* Variable */
+:root {
+  /* Primary Color */
+  --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+
+  /* Neutral Color */
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+
+  /* Font weight */
+  --weight-400: 400;
+  --weight-700: 700;
+}
+
+/* Container */
+.container {
+  max-width: 100%;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media all and (min-width: 480px) {
+  .container {
+    max-width: 460px;
+    padding: 0;
+  }
+}
+@media all and (min-width: 768px) {
+  .container {
+    max-width: 748px;
+  }
+}
+@media all and (min-width: 1024px) {
+  .container {
+    max-width: 1004px;
+  }
+}
+@media all and (min-width: 1200px) {
+  .container {
+    max-width: 1180px;
+  }
+}
+
+/* BTN */
+.btn {
+  border: none;
+  width: 50px;
+  height: 50px;
+  background-color: var(--very-dark-blue);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Main */
+.main {
+  min-height: 100vh;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.col-top {
+  padding: 50px;
+  border-radius: 10px 100px 10px 10px;
+}
+
+.col-bot,
+.col-top {
+  width: 300px;
+  background-color: var(--dark-blue);
+}
+
+.logo {
+  margin-bottom: 3rem;
+}
+
+.btn-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.col-bot {
+  position: relative;
+  padding: 30px 30px 60px 30px;
+  text-align: center;
+  color: var(--pale-blue);
+  border-radius: 10px;
+}
+
+.col-bot__description span {
+  font-weight: var(--weight-700);
+}
+
+.usage-rate {
+  margin: 2rem 0 1rem 0;
+  padding: 2px;
+  width: 100%;
+  height: 20px;
+  background-color: var(--very-dark-blue);
+  border-radius: 10px;
+}
+.usage-rate,
+.usage-rate__bg {
+  border-radius: 10px;
+}
+
+.usage-rate__bg {
+  display: block;
+  width: 70%;
+  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    hsl(6, 100%, 80%),
+    hsl(335, 100%, 65%)
+  );
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 11px;
+  height: 11px;
+  background-color: #fff;
+  border-radius: 100%;
+}
+
+.number-wrapper {
+  display: flex;
+  justify-content: space-between;
+  font-weight: var(--weight-700);
+}
+
+.number-wrapper,
+.remaining-amount {
+  text-transform: uppercase;
+}
+
+.col-bot__remaining-amount {
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: var(--grayish-blue);
+  background-color: #fff;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.col-bot__remaining-amount h2 {
+  font-weight: var(--weight-700);
+  color: var(--very-dark-blue);
+  font-size: 3rem;
+}
+
+.col-bot__remaining-amount p {
+  color: var(--Gradient);
+  min-width: 80px;
+  font-weight: var(--weight-700);
+}
+
+/* Responsive */
+@media all and (min-width: 768px) {
+  body {
+    background: url(../images/bg-desktop.png) no-repeat 0 120%;
+    background-color: var(--very-dark-blue);
+  }
+
+  .section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .col-bot {
+    padding: 30px 30px 50px 30px;
+    text-align: left;
+    align-self: flex-end;
+  }
+
+  .col-bot__remaining-amount {
+    text-align: center;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .col-top {
+    padding: 30px;
+  }
+
+  .col-bot {
+    width: 500px;
+    padding: 30px;
+  }
+
+  .col-bot__remaining-amount {
+    top: -50px;
+    right: -50px;
+    bottom: auto;
+    left: auto;
+    border-radius: 10px 10px 0 10px;
+  }
+  .col-bot__remaining-amount::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    border-right: 40px solid #fff;
+    border-bottom: 40px solid transparent;
+  }
+}
